@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
 
   title = 'Listado de productos';
   products: Product[] = [];
+  currentPage: number = 1;
 
   constructor(private service: ProductService) { }
 
