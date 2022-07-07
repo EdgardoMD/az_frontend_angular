@@ -1,0 +1,41 @@
+<p>Estamos acá</p>
+<div class="card text-dark bg-light mb-3">
+    <div class="card-header"> {{ title }}</div>
+    <div class="card-body">
+         <div class="alert alert-info" *ngIf="products?.length == 0">
+            No hay peliculas ni series en la base de datos.
+        </div> 
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Product code</th>
+                    <th>Product name</th>
+                    <th>Product line</th>
+                    <th>Product scale</th>
+                    <th>Product vendor</th>   
+
+                    <th>Product description</th> 
+                    <th>Quantity in stock</th> 
+                    <th>Buy price</th> 
+                    <th>MSRP</th>             
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of products">
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.productCode }}</td>
+                    <td>{{ p.productName }}</td>
+                    <td>{{ p.productLine }}</td>
+                    <td>{{ p.productScale }}</td>
+                    <td>{{ p.productVendor }}</td>
+                    <td>{{ p.productDescription }}</td>
+                    <td>{{ p.quantityInStock }}</td>
+                    <td>{{ p.buyPrice }}</td>
+                    <td>{{ p.MSRP }}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
