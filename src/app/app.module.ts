@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './product-list/products/products.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [

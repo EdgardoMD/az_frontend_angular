@@ -4,6 +4,7 @@
          <div class="alert alert-info" *ngIf="products?.length == 0">
             No hay productos en la base de datos.
         </div> 
+        <div class="table-responsive-xxl">
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
@@ -21,14 +22,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of products | paginate: {itemsPerPage: 2, currentPage: currentPage }">
+                <tr *ngFor="let p of products | paginate: {itemsPerPage: 4, currentPage: currentPage }">
                     <td>{{ p.id }}</td>
                     <td>{{ p.productCode }}</td>
                     <td>{{ p.productName }}</td>
                     <td>{{ p.productLine }}</td>
                     <td>{{ p.productScale }}</td>
                     <td>{{ p.productVendor }}</td>
-                    <td>{{ p.productDescription }}</td>
+                    <td>{{ p.productDescription | slice:0:70 }} ...</td>
                     <td>{{ p.quantityInStock }}</td>
                     <td>{{ p.buyPrice }}</td>
                     <td>{{ p.MSRP }}</td>
@@ -36,6 +37,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
         <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
     </div>
   </div>
